@@ -27,7 +27,11 @@ export default function Home({ meals }) {
 						return (
 							<div key={item.idMeal}>
 								<div className={clsx(styles.bg)}>
-									<Pic imgSrc={item.strMealThumb} imgTxt={item.strMeal} />
+									<Pic
+										imgSrc={item.strMealThumb}
+										imgTxt={item.strMeal}
+										url='/gallery'
+									/>
 								</div>
 							</div>
 						);
