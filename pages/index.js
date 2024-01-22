@@ -1,8 +1,9 @@
 import Head from 'next/head';
 import axios from 'axios';
+import Image from 'next/image';
+import Pic from '@/components/pic/pic';
 
-export default function Home(props) {
-	//console.log(props);
+export default function Home({ meals }) {
 	return (
 		<>
 			<Head>
@@ -11,6 +12,15 @@ export default function Home(props) {
 
 			<main>
 				<h1>Main page</h1>
+				{meals.map((item, idx) => {
+					if (idx >= 5) return;
+					return (
+						<div key={item.idMeal}>
+							<Pic imgSrc={item.strMealThumb} />
+							<h2>{item.strMeal}</h2>
+						</div>
+					);
+				})}
 			</main>
 		</>
 	);
