@@ -1,8 +1,9 @@
 import Head from 'next/head';
 import axios from 'axios';
 import clsx from 'clsx';
-import Pic from '@/components/pic/Pic';
 import styles from './Home.module.scss';
+import Text from '@/components/\batoms/text/Text';
+import Pic from '@/components/\batoms/pic/Pic';
 
 export default function Home({ meals }) {
 	return (
@@ -13,6 +14,12 @@ export default function Home({ meals }) {
 
 			<main className={clsx(styles.main)}>
 				<h1>Main page</h1>
+				<Text tagName='h1'>Hello</Text>
+				<Text tagName='h2'>blah blah blah</Text>
+				<Text>반갑습니다</Text>
+				<Text tagName='h3' url='/gallery'>
+					갤러리로 이동
+				</Text>
 				{meals.map((item, idx) => {
 					if (idx >= 5) return;
 					if (idx % 2 === 0) {
