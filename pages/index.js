@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import axios from 'axios';
-import Image from 'next/image';
-import Pic from '@/components/pic/pic';
+import clsx from 'clsx';
+import Pic from '@/components/pic/Pic';
+import styles from './Home.module.scss';
 
 export default function Home({ meals }) {
 	return (
@@ -10,16 +11,26 @@ export default function Home({ meals }) {
 				<title>Main Page</title>
 			</Head>
 
-			<main>
+			<main className={clsx(styles.main)}>
 				<h1>Main page</h1>
 				{meals.map((item, idx) => {
 					if (idx >= 5) return;
-					return (
-						<div key={item.idMeal}>
-							<Pic imgSrc={item.strMealThumb} />
-							<h2>{item.strMeal}</h2>
-						</div>
-					);
+					if (idx % 2 === 0) {
+						return (
+							<div key={item.idMeal}>
+								<div className={clsx(styles.bg)}>
+									<Pic imgSrc={item.strMealThumb} />
+								</div>
+							</div>
+						);
+					} else
+						return (
+							<div key={item.idMeal}>
+								<div className={clsx(styles.bg)}>
+									<Pic imgSrc={item.strMealThumb} imgTxt={item.strMeal} />
+								</div>
+							</div>
+						);
 				})}
 			</main>
 		</>
