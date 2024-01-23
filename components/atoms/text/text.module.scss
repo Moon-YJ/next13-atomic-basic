@@ -1,0 +1,26 @@
+.text {
+	color: #777;
+	font-family: var(--font-nanum);
+	font-weight: 400;
+	font-size: 1rem;
+	a {
+		color: inherit;
+		font-family: inherit;
+		font-weight: inherit;
+		font-size: inherit;
+	}
+	&.logo {
+		color: #111;
+		font-family: var(--font-orbitron);
+		font-weight: 600;
+		font-size: 1.8rem;
+	}
+	&.title1 {
+		color: #333;
+		font-size: 1.2rem;
+	}
+	&.slogan {
+		color: orangered;
+		font-size: 20vw;
+	}
+}

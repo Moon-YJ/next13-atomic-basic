@@ -14,12 +14,14 @@ export default function Home({ meals }) {
 
 			<main className={clsx(styles.main)}>
 				<h1>Main page</h1>
-				<Text tagName='h1'>Hello</Text>
-				<Text tagName='h2'>blah blah blah</Text>
-				<Text>반갑습니다</Text>
-				<Text tagName='h3' url='/gallery'>
-					갤러리로 이동
+				<Text tagName='h1' url='/' styleType='logo'>
+					LOGO
 				</Text>
+				<Text tagName='h2' styleType='title1'>
+					Title
+				</Text>
+				<Text>blah blah blah</Text>
+				<Text styleType='slogan'>Slogan</Text>
 				{meals.map((item, idx) => {
 					if (idx >= 5) return;
 					if (idx % 2 === 0) {
