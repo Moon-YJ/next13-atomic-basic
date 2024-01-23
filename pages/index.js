@@ -22,6 +22,9 @@ export default function Home({ meals }) {
 				</Text>
 				<Text>blah blah blah</Text>
 				<Text styleType='slogan'>Slogan</Text>
+				<Text styleType='slogan' className={clsx(styles.customTit)}>
+					Slogan2
+				</Text>
 				{meals.map((item, idx) => {
 					if (idx >= 5) return;
 					if (idx % 2 === 0) {

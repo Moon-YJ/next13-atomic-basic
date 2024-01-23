@@ -19,7 +19,13 @@ const orbitron = Orbitron({
 	variable: '--font-orbitron',
 });
 
-export default function Text({ tagName = 'p', children, url, styleType }) {
+export default function Text({
+	tagName = 'p',
+	children,
+	url,
+	styleType,
+	className,
+}) {
 	// JSX를 반환하는 리액트 내장 메서드
 	// React.createElement(elementType: string, props: object, children: JSX Node)
 	// return <h1 className={clsx(styles.text)}>{children}</h1>
@@ -31,7 +37,8 @@ export default function Text({ tagName = 'p', children, url, styleType }) {
 				styles.text,
 				nanum.variable,
 				orbitron.variable,
-				styles[styleType]
+				styles[styleType], // ex) styles.logo
+				className
 			),
 		},
 		// props로 전달받은 url값이 있으면 React.createElement로 Link 컴포넌트로 props값 설정한 뒤, children 감싸서 리턴
