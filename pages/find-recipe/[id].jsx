@@ -20,7 +20,7 @@ export default function Detail() {
 
 	return (
 		<section>
-			<Breadcrumb />
+			<Breadcrumb divider='>' />
 			<h1>Detail</h1>
 			<TableCol
 				data={Object.values(recipe)[0]}
