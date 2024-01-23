@@ -1,9 +1,11 @@
 import { TableCol, TableRow } from '@/components/\batoms/table/Table';
+import Breadcrumb from '@/components/molecules/breadcrumb/Breadcrumb';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+//import { useEffect, useState } from 'react';
 
 export default function Detail() {
-	const [Recipe, setRecipe] = useState(null);
+	//const [Recipe, setRecipe] = useState(null);
 	const recipe = {
 		member: [
 			{ name: 'David', age: 20, address: 'Seoul' },
@@ -12,12 +14,13 @@ export default function Detail() {
 		],
 	};
 
-	useEffect(() => {
-		axios.get('/search.php?s=Arrabiata').then((json) => setRecipe(json));
-	}, []);
+	// useEffect(() => {
+	// 	axios.get('/search.php?s=Arrabiata').then((json) => setRecipe(json));
+	// }, []);
 
 	return (
 		<section>
+			<Breadcrumb />
 			<h1>Detail</h1>
 			<TableCol
 				data={Object.values(recipe)[0]}
