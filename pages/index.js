@@ -3,10 +3,13 @@ import axios from 'axios';
 import clsx from 'clsx';
 import styles from './Home.module.scss';
 import Text from '@/components/\batoms/text/Text';
+import List from '@/components/\batoms/list/List';
 //import Pic from '@/components/\batoms/pic/Pic';
 
 export default function Home({ meals }) {
 	const menuName = ['about', 'gallery', 'youtube'];
+	const topRated = ['Avatar', 'Emily in Paris', 'AquaMan'];
+	const url = ['/', '/gallery', '/'];
 	return (
 		<>
 			<Head>
@@ -27,6 +30,7 @@ export default function Home({ meals }) {
 						);
 					})}
 				</nav>
+				<List data={topRated} tagName='ol' divider='-' url={url}></List>
 
 				{/* {meals.map((item, idx) => {
 					if (idx >= 5) return;
