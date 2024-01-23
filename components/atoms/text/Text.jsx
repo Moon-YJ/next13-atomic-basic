@@ -25,6 +25,7 @@ export default function Text({
 	url,
 	styleType,
 	className,
+	isOn = false,
 }) {
 	// JSX를 반환하는 리액트 내장 메서드
 	// React.createElement(elementType: string, props: object, children: JSX Node)
@@ -38,7 +39,8 @@ export default function Text({
 				nanum.variable,
 				orbitron.variable,
 				styles[styleType], // ex) styles.logo
-				className
+				className,
+				isOn && styles.on
 			),
 		},
 		// props로 전달받은 url값이 있으면 React.createElement로 Link 컴포넌트로 props값 설정한 뒤, children 감싸서 리턴

@@ -3,9 +3,10 @@ import axios from 'axios';
 import clsx from 'clsx';
 import styles from './Home.module.scss';
 import Text from '@/components/\batoms/text/Text';
-import Pic from '@/components/\batoms/pic/Pic';
+//import Pic from '@/components/\batoms/pic/Pic';
 
 export default function Home({ meals }) {
+	const menuName = ['about', 'gallery', 'youtube'];
 	return (
 		<>
 			<Head>
@@ -14,18 +15,17 @@ export default function Home({ meals }) {
 
 			<main className={clsx(styles.main)}>
 				<h1>Main page</h1>
-				<Text tagName='h1' url='/' styleType='logo'>
-					LOGO
-				</Text>
-				<Text tagName='h2' styleType='title1'>
-					Title
-				</Text>
-				<Text>blah blah blah</Text>
-				<Text styleType='slogan'>Slogan</Text>
-				<Text styleType='slogan' className={clsx(styles.customTit)}>
-					Slogan2
-				</Text>
-				{meals.map((item, idx) => {
+				<nav>
+					{menuName.map((name, idx) => {
+						return (
+							<Text key={name} url={`/${name}`} tagName='span' isOn={idx === 0}>
+								{name}
+							</Text>
+						);
+					})}
+				</nav>
+
+				{/* {meals.map((item, idx) => {
 					if (idx >= 5) return;
 					if (idx % 2 === 0) {
 						return (
@@ -47,7 +47,7 @@ export default function Home({ meals }) {
 								</div>
 							</div>
 						);
-				})}
+				})} */}
 			</main>
 		</>
 	);
