@@ -15,6 +15,9 @@ export default function Home({ meals }) {
 
 			<main className={clsx(styles.main)}>
 				<h1>Main page</h1>
+				<Text styleType={'slogan'} className={clsx(styles.customTit)}>
+					Slogan2
+				</Text>
 				<nav>
 					{menuName.map((name, idx) => {
 						return (
