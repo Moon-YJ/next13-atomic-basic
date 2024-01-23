@@ -5,7 +5,6 @@ import SearchBar from '@/components/molecules/searchBar/SearchBar';
 
 export default function Gallery() {
 	const [Val, setVal] = useState('');
-	console.log(Val);
 
 	return (
 		<section className={clsx(styles.gallery)}>
