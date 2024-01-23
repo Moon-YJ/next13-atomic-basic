@@ -4,12 +4,16 @@ import clsx from 'clsx';
 import styles from './Home.module.scss';
 import Text from '@/components/\batoms/text/Text';
 import List from '@/components/\batoms/list/List';
+import { useState } from 'react';
+import Input from '@/components/\batoms/input/Input';
 //import Pic from '@/components/\batoms/pic/Pic';
 
 export default function Home({ meals }) {
 	const menuName = ['about', 'gallery', 'youtube'];
 	const topRated = ['Avatar', 'Emily in Paris', 'AquaMan'];
 	const url = ['/', '/gallery', '/'];
+	const [Val, setVal] = useState('');
+
 	return (
 		<>
 			<Head>
@@ -18,6 +22,7 @@ export default function Home({ meals }) {
 
 			<main className={clsx(styles.main)}>
 				<h1>Main page</h1>
+				<Input value={Val} onChange={setVal} />
 				<Text styleType={'slogan'} className={clsx(styles.customTit)}>
 					Slogan2
 				</Text>
