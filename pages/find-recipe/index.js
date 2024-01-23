@@ -1,13 +1,12 @@
 import clsx from 'clsx';
 import styles from './find-recipe.module.scss';
-import { useRouter } from 'next/router';
-import Breadcrumb from '@/components/molecules/breadcrumb/Breadcrumb';
+import NavBar from '@/components/molecules/navBar/NavBar';
 
 export default function FindRecipe() {
 	return (
 		<section className={clsx(styles.findRecipe)}>
-			<h1>Find-Recipe</h1>
-			<Breadcrumb />
+			{/* Navbar호출시 화면에 출력할 메뉴명 전달 */}
+			<NavBar data={['Find Recipe', 'Gallery', 'About']} />
 		</section>
 	);
 }
