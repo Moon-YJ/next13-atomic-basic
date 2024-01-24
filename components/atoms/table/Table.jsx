@@ -9,6 +9,8 @@ import Text from '../text/Text';
     tr(반복) > td(no) > td(name) > td(age) > td(address)
 */
 
+// pages > find-recipe > [id].jsx에서 Table 컴포넌트 import
+
 export function TableCol({
 	data,
 	title,
@@ -80,18 +82,21 @@ export function TableRow({
 								{/* 내부적으로 반족을 돌때는 데이터 배열의 개수만큼 td가 생성되어야하기 때문에 data로 반복처리 */}
 								{data.map((_, idx2) => (
 									// td반복
-									// data[0] => 0번째 객체, data[1] => 1번째 객체, data[2] => 2번째 객체
-
 									// 0번째 tr을 반복돌때 0번째 데이터에서 0번째 키값인 name값을 출력
-									// 0번째 tr을 반복돌때 0번째 데이터에서 1번째 키값인 age값을 출력
-									// 0번째 tr을 반복돌때 0번째 데이터에서 2번째 키값인 address값을 출력
-									// 0: data[0][keys[0]] => name, data[0][keys[1]] => age, data[0][keys[2]] => address
+									// 0번째 tr을 반복돌때 1번째 데이터에서 0번째 키값인 name값을 출력
+									// 0번째 tr을 반복돌때 2번째 데이터에서 0번째 키값인 name값을 출력
+									// 0: data[0][keys[0]] => name, data[1][keys[0]] => age, data[2][keys[0]] => address
 
-									// 1번째 tr을 반복돌때 1번째 데이터에서 0번째 키값인 age값을 출력
-									// 1: data[1][keys[0]], data[1][keys[1]], data1][keys[2]]
+									// 1번째 tr을 반복돌때 0번째 데이터에서 1번째 키값인 age값을 출력
+									// 1번째 tr을 반복돌때 1번째 데이터에서 1번째 키값인 age값을 출력
+									// 1번째 tr을 반복돌때 2번째 데이터에서 1번째 키값인 age값을 출력
+									// 1: data[0][keys[1]], data[1][keys[1]], data[2][keys[1]]
 
+									// 2번째 tr을 반복돌때 0번째 데이터에서 2번째 키값인 address값을 출력
+									// 2번째 tr을 반복돌때 1번째 데이터에서 2번째 키값인 address값을 출력
 									// 2번째 tr을 반복돌때 2번째 데이터에서 2번째 키값인 address값을 출력
-									// 2: data[2][keys[0]], data[2][keys[1]], data[2][keys[2]]
+									// 2: data[0][keys[2]], data[1][keys[2]], data[2][keys[2]]
+
 									// idx2 - data배열의 반복 순번
 									// td는 data의 개수만큼 반복을 돌면서 상위에서 반복도는 순번의 key값의 데이터만 출력
 									<td key={idx2}>{data[idx2][keys[idx]]}</td>
