@@ -11,6 +11,7 @@ export default function Detail() {
 			{ name: 'David', age: 20, address: 'Seoul' },
 			{ name: 'Amy', age: 32, address: 'Incheon' },
 			{ name: 'James', age: 41, address: 'Busan' },
+			{ name: 'Paul', age: 11, address: 'Daegu' },
 		],
 	};
 
