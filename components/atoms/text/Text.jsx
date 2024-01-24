@@ -27,10 +27,8 @@ export default function Text({
 	url,
 	styleType,
 	className,
-	isOn = false,
+	isOn,
 	onClick,
-	data,
-	idx,
 }) {
 	// JSX를 반환하는 리액트 내장 메서드
 	// React.createElement(elementType: string, props: object, children: JSX Node)
@@ -49,7 +47,7 @@ export default function Text({
 			),
 			// onClick props로 전달되는 핸들러함수에 어떤 값이 쓰일지 모르기 때문에 일단 다 연결
 			// 주의: 객체로 묶어주지 않으면 특정 인수가 전달되지 않았을때 파라미터 순서가 변경되므로 이를 방지하기 위해 객체로 인수를 묶음
-			onClick: (e) => onClick({ e, idx, data }),
+			onClick: onClick,
 		},
 		// props로 전달받은 url값이 있으면 React.createElement로 Link 컴포넌트로 props값 설정한 뒤, children 감싸서 리턴
 		url ? React.createElement(Link, { href: url }, children) : children
